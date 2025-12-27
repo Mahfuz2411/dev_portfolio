@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+   themes: corporate --default;
+ }
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
