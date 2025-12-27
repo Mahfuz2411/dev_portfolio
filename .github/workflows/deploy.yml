@@ -23,11 +23,11 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Remove ignoreDeprecations from tsconfig.app.json
-        run: sed -i '/"ignoreDeprecations": "6.0",/d' tsconfig.app.json
-      
-      - name: Remove ignoreDeprecations from tsconfig.json
-        run: sed -i '/"ignoreDeprecations": "6.0",/d' tsconfig.json
+      - name: Remove ignoreDeprecations from tsconfig files
+        run: |
+          sed -i '/"ignoreDeprecations": "6.0",/d' tsconfig.app.json
+          sed -i '/"ignoreDeprecations": "6.0",/d' tsconfig.json
+
 
 
       - name: Install Dependencies
