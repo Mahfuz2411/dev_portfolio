@@ -7,6 +7,7 @@ const Home = () => {
     return (
         <> 
             <div>Hello from Home</div>
+            <div>Hello from Home 02</div>
         </>
     )
 }
