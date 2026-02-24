@@ -103,68 +103,68 @@ const About = () => {
                             </p>
                         </div>
                     </Card>
-                </div>
 
-                {/* Skills Section */}
-                <div>
-                    <h3 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 text-left">
-                        💻 Skills & Technologies
-                    </h3>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {skills.map((skillGroup, index) => (
-                            <Card 
-                                key={index}
-                                className="p-6 border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
-                            >
-                                <h4 className="text-lg font-bold text-indigo-600 dark:text-indigo-400 mb-4">
-                                    {skillGroup.category}
-                                </h4>
-                                <div className="space-y-2">
-                                    {skillGroup.items.map((skill, idx) => (
-                                        <div 
-                                            key={idx}
-                                            className="text-sm text-slate-700 dark:text-slate-300 py-1.5 px-3 bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-colors"
-                                        >
-                                            {skill}
-                                        </div>
-                                    ))}
-                                </div>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Journey Timeline - Full Width */}
-                <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm mb-8">
-                    <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
-                        🌱 My Growth Journey
-                    </h3>
-                    <div className="space-y-4">
-                        {timeline.map((item, index) => {
-                            const Icon = item.icon;
-                            return (
-                                <div 
+                    {/* Skills Section */}
+                    <div>
+                        <h3 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 text-left">
+                            💻 Skills & Technologies
+                        </h3>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {skills.map((skillGroup, index) => (
+                                <Card 
                                     key={index}
-                                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                                    className="p-6 border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
                                 >
-                                    <div className="shrink-0 w-12 h-12 bg-linear-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-lg">
-                                        <Icon className="w-6 h-6" />
+                                    <h4 className="text-lg font-bold text-indigo-600 dark:text-indigo-400 mb-4">
+                                        {skillGroup.category}
+                                    </h4>
+                                    <div className="space-y-2">
+                                        {skillGroup.items.map((skill, idx) => (
+                                            <div 
+                                                key={idx}
+                                                className="text-sm text-slate-700 dark:text-slate-300 py-1.5 px-3 bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-colors"
+                                            >
+                                                {skill}
+                                            </div>
+                                        ))}
                                     </div>
-                                    <div className="flex-1">
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">
-                                                {item.year}
-                                            </span>
-                                            <span className="text-slate-700 dark:text-slate-300">
-                                                {item.event}
-                                            </span>
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Journey Timeline */}
+                    <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+                        <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+                            🌱 My Growth Journey
+                        </h3>
+                        <div className="space-y-4">
+                            {timeline.map((item, index) => {
+                                const Icon = item.icon;
+                                return (
+                                    <div 
+                                        key={index}
+                                        className="flex items-center gap-4 p-4 rounded-lg hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                                    >
+                                        <div className="shrink-0 w-12 h-12 bg-linear-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white shadow-lg">
+                                            <Icon className="w-6 h-6" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">
+                                                    {item.year}
+                                                </span>
+                                                <span className="text-slate-700 dark:text-slate-300">
+                                                    {item.event}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </Card>
+                                );
+                            })}
+                        </div>
+                    </Card>
+                </div>
 
             </div>
         </section>

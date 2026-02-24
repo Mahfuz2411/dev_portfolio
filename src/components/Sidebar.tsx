@@ -1,4 +1,4 @@
-import { Award, Contact, House, Images, Sprout, Menu } from "lucide-react";
+import { Award, Contact, House, Images, Sprout, Menu, Trophy } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -15,6 +15,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
     { path: "/", label: "Home", icon: House, tooltip: "Homepage" },
     { path: "/projects", label: "Garden", icon: Sprout, tooltip: "My Projects" },
     { path: "/about", label: "About Me", icon: Award, tooltip: "About Me" },
+    { path: "/achievements", label: "Achievements", icon: Trophy, tooltip: "Achievements" },
     { path: "/gallery", label: "Gallery", icon: Images, tooltip: "Gallery" },
     { path: "/contact", label: "Contact", icon: Contact, tooltip: "Contact" },
   ];
@@ -58,10 +59,10 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
                     className={({ isActive }) =>
                       cn(
                         "flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group relative",
-                        "hover:bg-indigo-50 hover:text-indigo-700",
+                        "hover:bg-indigo-50 dark:hover:bg-slate-700 hover:text-indigo-700 dark:hover:text-indigo-300",
                         isActive
                           ? "bg-linear-to-r from-indigo-600 to-purple-600 text-white shadow-md"
-                          : "text-slate-700"
+                          : "text-slate-700 dark:text-slate-300"
                       )
                     }
                     title={isCollapsed ? item.tooltip : undefined}

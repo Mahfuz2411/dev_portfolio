@@ -1,6 +1,8 @@
 import { useHelmet } from "@/hooks/Helmet";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Mail, Github, Linkedin, Send, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 
@@ -135,14 +137,13 @@ const Contact = () => {
                                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                     Your Name
                                 </label>
-                                <input
+                                <Input
                                     type="text"
                                     id="name"
                                     name="name"
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100"
                                     placeholder="John Doe"
                                 />
                             </div>
@@ -151,14 +152,13 @@ const Contact = () => {
                                 <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                     Email Address
                                 </label>
-                                <input
+                                <Input
                                     type="email"
                                     id="email"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100"
                                     placeholder="john@example.com"
                                 />
                             </div>
@@ -167,14 +167,14 @@ const Contact = () => {
                                 <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                     Your Message
                                 </label>
-                                <textarea
+                                <Textarea
                                     id="message"
                                     name="message"
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
                                     rows={5}
-                                    className="w-full px-4 py-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors resize-none bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100"
+                                    className="resize-none"
                                     placeholder="Tell me about your project or idea..."
                                 />
                             </div>

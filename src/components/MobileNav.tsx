@@ -1,4 +1,4 @@
-import { Award, Contact, House, Images, Sprout, Menu, X } from "lucide-react";
+import { Award, Contact, House, Images, Sprout, Menu, X, Trophy } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -12,6 +12,7 @@ const MobileNav = () => {
     { path: "/", label: "Home", icon: House },
     { path: "/projects", label: "Garden", icon: Sprout },
     { path: "/about", label: "About", icon: Award },
+    { path: "/achievements", label: "Achievements", icon: Trophy },
     { path: "/gallery", label: "Gallery", icon: Images },
     { path: "/contact", label: "Contact", icon: Contact },
   ];
