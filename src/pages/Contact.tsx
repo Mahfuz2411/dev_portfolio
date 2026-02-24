@@ -109,30 +109,30 @@ const Contact = () => {
 
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* Header */}
-                <div className="text-center mb-12 animate-fade-in">
+                <div className="text-left mb-12 animate-fade-in">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
                         <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
                             Let's Connect
                         </span>
                     </h1>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
                         Have a project in mind or just want to say hi? Feel free to reach out!
                     </p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-8 mb-12">
                     {/* Contact Form */}
-                    <Card className="p-6 sm:p-8 border-2 border-slate-200 bg-white/80 backdrop-blur-sm">
-                        <h2 className="text-2xl font-bold text-slate-800 mb-2">
+                    <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+                        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
                             🌱 Plant a Seed
                         </h2>
-                        <p className="text-slate-600 mb-6">
+                        <p className="text-slate-600 dark:text-slate-300 mb-6">
                             Every great collaboration starts with a message
                         </p>
 
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                     Your Name
                                 </label>
                                 <input
@@ -142,13 +142,13 @@ const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors"
+                                    className="w-full px-4 py-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100"
                                     placeholder="John Doe"
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                     Email Address
                                 </label>
                                 <input
@@ -158,13 +158,13 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors"
+                                    className="w-full px-4 py-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100"
                                     placeholder="john@example.com"
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                     Your Message
                                 </label>
                                 <textarea
@@ -174,7 +174,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     rows={5}
-                                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors resize-none"
+                                    className="w-full px-4 py-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors resize-none bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100"
                                     placeholder="Tell me about your project or idea..."
                                 />
                             </div>
@@ -214,46 +214,46 @@ const Contact = () => {
                     {/* Contact Info & Social Links */}
                     <div className="space-y-6">
                         {/* Contact Info */}
-                        <Card className="p-6 sm:p-8 border-2 border-slate-200 bg-white/80 backdrop-blur-sm">
-                            <h2 className="text-2xl font-bold text-slate-800 mb-6">
+                        <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+                            <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
                                 📍 Contact Information
                             </h2>
                             <div className="space-y-4">
-                                <div className="flex items-center gap-4 text-slate-700">
-                                    <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center shrink-0">
-                                        <MapPin className="w-6 h-6 text-indigo-600" />
+                                <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
+                                    <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center shrink-0">
+                                        <MapPin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                                     </div>
                                     <div>
                                         <p className="font-semibold">Location</p>
-                                        <p className="text-sm text-slate-600">Dhaka, Bangladesh</p>
+                                        <p className="text-sm text-slate-600 dark:text-slate-400">Dhaka, Bangladesh</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-4 text-slate-700">
-                                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center shrink-0">
-                                        <Mail className="w-6 h-6 text-purple-600" />
+                                <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
+                                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center shrink-0">
+                                        <Mail className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                                     </div>
                                     <div>
                                         <p className="font-semibold">Email</p>
-                                        <a href="mailto:mahfuzibnesyflu24@gmail.com" className="text-sm text-slate-600 hover:text-indigo-600 transition-colors">
+                                        <a href="mailto:mahfuzibnesyflu24@gmail.com" className="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                             mahfuzibnesyflu24@gmail.com
                                         </a>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-4 text-slate-700">
-                                    <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center shrink-0">
-                                        <Phone className="w-6 h-6 text-emerald-600" />
+                                <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
+                                    <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-full flex items-center justify-center shrink-0">
+                                        <Phone className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                                     </div>
                                     <div>
                                         <p className="font-semibold">Phone</p>
-                                        <p className="text-sm text-slate-600">+8801732389350</p>
+                                        <p className="text-sm text-slate-600 dark:text-slate-400">+8801732389350</p>
                                     </div>
                                 </div>
                             </div>
                         </Card>
 
                         {/* Social Links */}
-                        <Card className="p-6 sm:p-8 border-2 border-slate-200 bg-white/80 backdrop-blur-sm">
-                            <h2 className="text-2xl font-bold text-slate-800 mb-6">
+                        <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+                            <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
                                 🔗 Connect With Me
                             </h2>
                             <div className="space-y-3">
@@ -265,14 +265,14 @@ const Contact = () => {
                                             href={social.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-4 p-4 rounded-lg border-2 border-slate-200 hover:border-indigo-300 bg-white hover:shadow-lg transition-all duration-300 group"
+                                            className="flex items-center gap-4 p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white dark:bg-slate-900 hover:shadow-lg transition-all duration-300 group"
                                         >
                                             <div className={`w-12 h-12 bg-linear-to-br ${social.color} rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
                                                 <Icon className="w-6 h-6 text-white" />
                                             </div>
                                             <div className="flex-1">
-                                                <p className="font-semibold text-slate-800">{social.name}</p>
-                                                <p className="text-sm text-slate-600">{social.handle}</p>
+                                                <p className="font-semibold text-slate-800 dark:text-slate-100">{social.name}</p>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400">{social.handle}</p>
                                             </div>
                                         </a>
                                     );

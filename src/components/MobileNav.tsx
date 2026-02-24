@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const MobileNav = () => {
   return (
     <div className="lg:hidden">
       {/* Mobile Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 shadow-sm">
         <div className="flex items-center justify-between px-4 py-3">
           <h1 className="text-lg font-bold bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
             ✨ Portfolio
@@ -40,7 +41,7 @@ const MobileNav = () => {
             className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
             onClick={() => setIsOpen(false)}
           />
-          <nav className="fixed top-14.25 left-0 right-0 bg-white border-b border-slate-200 shadow-lg z-40 lg:hidden">
+          <nav className="fixed top-14.25 left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-lg z-40 lg:hidden">
             <ul className="py-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -52,10 +53,10 @@ const MobileNav = () => {
                       className={({ isActive }) =>
                         cn(
                           "flex items-center gap-3 px-4 py-3 transition-colors",
-                          "hover:bg-indigo-50",
+                          "hover:bg-indigo-50 dark:hover:bg-slate-800",
                           isActive
                             ? "bg-linear-to-r from-indigo-600 to-purple-600 text-white"
-                            : "text-slate-700"
+                            : "text-slate-700 dark:text-slate-300"
                         )
                       }
                     >
@@ -66,6 +67,10 @@ const MobileNav = () => {
                 );
               })}
             </ul>
+            {/* Theme Toggle in Mobile Menu */}
+            <div className="px-4 py-3 border-t border-slate-200 dark:border-slate-700">
+              <ThemeToggle />
+            </div>
           </nav>
         </>
       )}

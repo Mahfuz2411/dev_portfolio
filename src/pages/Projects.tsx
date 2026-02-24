@@ -37,14 +37,14 @@ const Projects = () => {
             </div>
 
             {/* Header */}
-            <div className="max-w-6xl mx-auto mb-8 sm:mb-12 relative z-10">
-                <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-800 mb-4">
+            <div className="max-w-6xl mx-auto mb-8 sm:mb-12 relative z-10 text-left">
+                <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-800 dark:text-slate-100 mb-4">
                     Project{" "}
                     <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                         Garden
                     </span>
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-600">
+                <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300">
                     Explore my growing collection of projects - each one cultivated with care 🌱
                 </p>
             </div>
@@ -54,11 +54,11 @@ const Projects = () => {
                 {visibleProjects.map((project) => (
                     <Card 
                         key={project.id}
-                        className="overflow-hidden border-2 border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-xl bg-white/80 backdrop-blur-sm"
+                        className="overflow-hidden border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                     >
                         <div className="grid md:grid-cols-2 gap-0">
                             {/* Project Image */}
-                            <div className="relative h-56 sm:h-72 md:h-auto overflow-hidden bg-slate-100">
+                            <div className="relative h-56 sm:h-72 md:h-auto overflow-hidden bg-slate-100 dark:bg-slate-900">
                                 <img 
                                     src={project.image} 
                                     alt={project.name}
@@ -71,15 +71,15 @@ const Projects = () => {
                             <div className="p-6 sm:p-8 flex flex-col justify-between">
                                 <div>
                                     <div className="flex items-start justify-between mb-3">
-                                        <h3 className="text-2xl sm:text-3xl font-bold text-slate-800">
+                                        <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-100">
                                             {project.name}
                                         </h3>
-                                        <div className="flex items-center gap-1 text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded-full">
+                                        <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full">
                                             #{project.id}
                                         </div>
                                     </div>
                                     
-                                    <p className="text-slate-600 mb-4 leading-relaxed">
+                                    <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                                         {project.description}
                                     </p>
 

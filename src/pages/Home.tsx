@@ -28,14 +28,14 @@ const Home = () => {
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
                 {/* Hero Content */}
                 <div className="space-y-4 sm:space-y-6 animate-fade-in">
-                    <h1 className="font-extrabold text-5xl sm:text-6xl text-slate-800 leading-tight">
+                    <h1 className="font-extrabold text-5xl sm:text-6xl text-slate-800 dark:text-slate-100 leading-tight">
                         Welcome to My{" "}<br />
                         
                         <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                             Digital Garden
                         </span>
                     </h1>
-                    <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed">
+                    <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed">
                         Where creativity blooms and projects grow into beautiful experiences
                     </p>
 
@@ -52,9 +52,9 @@ const Home = () => {
                     </div>
 
                     {/* Weather Widget */}
-                    <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/90 backdrop-blur-sm px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md border border-slate-200">
+                    <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md border border-slate-200 dark:border-slate-700">
                         <span className="text-xl sm:text-2xl">☀️</span>
-                        <span className="text-xs sm:text-sm font-medium text-slate-700">Perfect day for coding • 22°C</span>
+                        <span className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">Perfect day for coding • 22°C</span>
                     </div>
                 </div>
 

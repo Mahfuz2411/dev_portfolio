@@ -102,13 +102,13 @@ const Gallery = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
-                <div className="text-center mb-12 animate-fade-in">
+                <div className="text-left mb-12 animate-fade-in">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
                         <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
                             Gallery
                         </span>
                     </h1>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
                         Moments captured from competitions, events, and achievements
                     </p>
                 </div>
@@ -118,7 +118,7 @@ const Gallery = () => {
                     {galleryItems.map((item, index) => (
                         <Card 
                             key={item.id}
-                            className={`${getSizeClass(item.size)} group relative overflow-hidden cursor-pointer border-2 border-slate-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-2xl`}
+                            className={`${getSizeClass(item.size)} group relative overflow-hidden cursor-pointer border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-2xl`}
                             style={{
                                 animationDelay: `${index * 0.1}s`
                             }}

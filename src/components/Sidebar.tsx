@@ -2,12 +2,15 @@ import { Award, Contact, House, Images, Sprout, Menu } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
-const Sidebar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+interface SidebarProps {
+  isCollapsed: boolean;
+  setIsCollapsed: (value: boolean) => void;
+}
 
+const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
   const navItems = [
     { path: "/", label: "Home", icon: House, tooltip: "Homepage" },
     { path: "/projects", label: "Garden", icon: Sprout, tooltip: "My Projects" },
@@ -19,7 +22,7 @@ const Sidebar = () => {
   return (
     <aside
       className={cn(
-        "fixed left-0 top-0 z-40 h-screen transition-all duration-300 bg-white/95 backdrop-blur-sm border-r border-slate-200 shadow-lg",
+        "fixed left-0 top-0 z-40 h-screen transition-all duration-300 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-r border-slate-200 dark:border-slate-700 shadow-lg",
         isCollapsed ? "w-16" : "w-64"
       )}
     >
@@ -81,10 +84,17 @@ const Sidebar = () => {
           </ul>
         </nav>
 
+        {/* Theme Toggle */}
+        {!isCollapsed && (
+          <div className="px-4 py-3">
+            <ThemeToggle />
+          </div>
+        )}
+
         {/* Footer */}
-        <div className="p-4 border-t border-slate-200">
+        <div className="p-4 border-t border-slate-200 dark:border-slate-700">
           {!isCollapsed ? (
-            <p className="text-xs text-slate-500 text-center">
+            <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
               Crafting digital experiences ✨
             </p>
           ) : (
