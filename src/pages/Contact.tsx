@@ -92,26 +92,10 @@ const Contact = () => {
     ];
 
     return (
-        <section className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-            {/* Floating Particles Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(30)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-2 h-2 bg-indigo-400/20 rounded-full animate-float"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
-                            animationDuration: `${5 + Math.random() * 10}s`
-                        }}
-                    />
-                ))}
-            </div>
-
-            <div className="max-w-6xl mx-auto relative z-10">
+        <section className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden animate-fade-in">
+            <div className="max-w-6xl mx-auto">
                 {/* Header */}
-                <div className="text-left mb-12 animate-fade-in">
+                <div className="text-left mb-12">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
                         <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
                             Let's Connect

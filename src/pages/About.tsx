@@ -20,24 +20,8 @@ const About = () => {
     ];
 
     return (
-        <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16">
-            {/* Floating Particles Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                {[...Array(15)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-2 h-2 bg-indigo-400/20 rounded-full animate-float"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
-                            animationDuration: `${5 + Math.random() * 5}s`
-                        }}
-                    />
-                ))}
-            </div>
-
-            <div className="max-w-6xl mx-auto relative z-10">
+        <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16 animate-fade-in">
+            <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="mb-8 sm:mb-12 text-left">
                     <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-800 dark:text-slate-100 mb-4">

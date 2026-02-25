@@ -83,26 +83,10 @@ const Gallery = () => {
     };
 
     return (
-        <section className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-            {/* Floating Particles Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(25)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-2 h-2 bg-indigo-400/20 rounded-full animate-float"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
-                            animationDuration: `${5 + Math.random() * 10}s`
-                        }}
-                    />
-                ))}
-            </div>
-
-            <div className="max-w-7xl mx-auto relative z-10">
+        <section className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden animate-fade-in">
+            <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-left mb-12 animate-fade-in">
+                <div className="text-left mb-12">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
                         <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
                             Gallery
@@ -115,13 +99,10 @@ const Gallery = () => {
 
                 {/* Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[250px]">
-                    {galleryItems.map((item, index) => (
+                    {galleryItems.map((item) => (
                         <Card 
                             key={item.id}
                             className={`${getSizeClass(item.size)} group relative overflow-hidden cursor-pointer border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-2xl`}
-                            style={{
-                                animationDelay: `${index * 0.1}s`
-                            }}
                         >
                             {/* Image */}
                             <img 
