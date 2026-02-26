@@ -2,6 +2,17 @@ import { useHelmet } from "@/hooks/Helmet";
 import { Card } from "@/components/ui/card";
 import { Tag } from "lucide-react";
 
+import buetIupcImage from "@/assets/gallery/buet-iupc-2024.jpg";
+import icpcDhakaImage2024 from "@/assets/gallery/ICPC-dhaka-regional-2024.jpg";
+import icpcDhakaImage2025 from "@/assets/gallery/ICPC-dhaka-regional-2025.jpg";
+import duetIupcImage from "@/assets/gallery/duet-iupc-2025.jpg";
+import deptPicnicImage from "@/assets/gallery/dept-picnic-2025.jpeg";
+import bubtBapsCampImage from "@/assets/gallery/bubt-baps-camp-2025.jpg";
+
+import pracContestImage01 from "@/assets/gallery/prac-contest-01.jpg";
+import pracContestImage02 from "@/assets/gallery/prac-contest-02.jpg";
+import pracContestImage03 from "@/assets/gallery/prac-contest-03.jpg";
+
 interface GalleryItem {
     id: number;
     image: string;
@@ -15,56 +26,56 @@ const Gallery = () => {
     const galleryItems: GalleryItem[] = [
         {
             id: 1,
-            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-            tag: "ICPC Dhaka Regional 2024",
+            image: icpcDhakaImage2025,
+            tag: "ICPC Dhaka Regional 2025",
             size: 'large'
         },
         {
             id: 2,
-            image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600",
-            tag: "Hackathon Winner 2023",
+            image: buetIupcImage,
+            tag: "BUET IUPC 2024",
             size: 'small'
         },
         {
             id: 3,
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600",
-            tag: "Tech Conference 2024",
+            image: icpcDhakaImage2024,
+            tag: "ICPC Dhaka Regional 2024",
             size: 'small'
         },
         {
             id: 4,
-            image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500",
-            tag: "Team Building Event",
+            image: duetIupcImage,
+            tag: "DUET IUPC 2025",
             size: 'small'
         },
         {
             id: 5,
-            image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800",
-            tag: "Workshop on AI/ML",
+            image: deptPicnicImage,
+            tag: "Department Picnic 2025",
             size: 'small'
         },
         {
             id: 6,
-            image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500",
-            tag: "Coding Bootcamp",
+            image: bubtBapsCampImage,
+            tag: "BUET-BAPS National Programming Camp 2025",
             size: 'small'
         },
         {
             id: 7,
-            image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600",
-            tag: "Project Presentation",
+            image: pracContestImage01,
+            tag: "Warmup Contest for ICPC Dhaka Regional 2024",
             size: 'small'
         },
         {
             id: 8,
-            image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800",
-            tag: "University Fest 2023",
+            image: pracContestImage02,
+            tag: "BUBT ICPC Preliminary Contest 2025",
             size: 'small'
         },
         {
             id: 9,
-            image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=500",
-            tag: "Study Session",
+            image: pracContestImage03,
+            tag: "Warmup Contest for ICPC Dhaka Regional 2024",
             size: 'small'
         }
     ];
@@ -106,6 +117,7 @@ const Gallery = () => {
                         >
                             {/* Image */}
                             <img 
+                                // src="../assets/gallery/buet-iupc-2024.jpg"
                                 src={item.image}
                                 alt={item.tag}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -119,12 +131,6 @@ const Gallery = () => {
                                         <span className="font-semibold text-lg">{item.tag}</span>
                                     </div>
                                 </div>
-                            </div>
-
-                            {/* Top Tag Badge - Always Visible */}
-                            <div className="absolute top-4 left-4 bg-indigo-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg flex items-center gap-2">
-                                <Tag className="w-4 h-4" />
-                                <span>{item.tag}</span>
                             </div>
                         </Card>
                     ))}

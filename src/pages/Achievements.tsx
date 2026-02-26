@@ -2,6 +2,9 @@ import { useHelmet } from "@/hooks/Helmet";
 import { Card } from "@/components/ui/card";
 import { Award } from "lucide-react";
 
+import achievementImage01 from "@/assets/achievements/bubt-baps-camp-2025-certificate-.jpeg";
+import achievementImage02 from "@/assets/achievements/contest-judges.jpg";
+
 interface AchievementItem {
     id: number;
     image: string;
@@ -15,15 +18,15 @@ const Achievements = () => {
     const achievements: AchievementItem[] = [
         {
             id: 1,
-            image: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800",
-            title: "1st Place - National Hackathon 2024",
-            year: "2024"
+            image: achievementImage01,
+            title: "Certificate of Participation - BUET-BAPS National Programming Camp 2025",
+            year: "2025"
         },
         {
             id: 2,
-            image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800",
-            title: "ICPC Dhaka Regional Finalist",
-            year: "2024"
+            image: achievementImage02,
+            title: "Contest Judge - NEUB ICT Fest 2025",
+            year: "2025"
         },
         {
             id: 3,
@@ -98,8 +101,7 @@ const Achievements = () => {
                                     <div className="flex items-start gap-3 text-white">
                                         <Award className="w-6 h-6 text-yellow-400 shrink-0 mt-1" />
                                         <div>
-                                            <h3 className="font-bold text-xl mb-2">{item.title}</h3>
-                                            <p className="text-indigo-300 text-sm">Year: {item.year}</p>
+                                            <h3 className="font-bold text-xl">{item.title}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -109,11 +111,6 @@ const Achievements = () => {
                             <div className="absolute top-4 right-4 bg-yellow-500/90 backdrop-blur-sm text-slate-900 px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
                                 <Award className="w-4 h-4" />
                                 <span>{item.year}</span>
-                            </div>
-
-                            {/* Bottom Title - Always Visible on Mobile */}
-                            <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/80 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-                                <p className="text-white font-semibold text-sm line-clamp-2">{item.title}</p>
                             </div>
                         </Card>
                     ))}
