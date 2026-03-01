@@ -57,7 +57,7 @@ const Gallery = () => {
         {
             id: 6,
             image: bubtBapsCampImage,
-            tag: "BUET-BAPS National Programming Camp 2025",
+            tag: "BUBT-BAPS National Programming Camp 2025",
             size: 'small'
         },
         {

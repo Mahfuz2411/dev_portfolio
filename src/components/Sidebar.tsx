@@ -13,7 +13,7 @@ interface SidebarProps {
 const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
   const navItems = [
     { path: "/", label: "Home", icon: House, tooltip: "Homepage" },
-    { path: "/projects", label: "Garden", icon: Sprout, tooltip: "My Projects" },
+    { path: "/projects", label: "Project Garden", icon: Sprout, tooltip: "My Projects" },
     { path: "/about", label: "About Me", icon: Award, tooltip: "About Me" },
     { path: "/achievements", label: "Achievements", icon: Trophy, tooltip: "Achievements" },
     { path: "/gallery", label: "Gallery", icon: Images, tooltip: "Gallery" },
@@ -58,7 +58,8 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group relative",
+                        "flex items-center rounded-lg transition-all duration-200 group relative",
+                        isCollapsed ? "justify-center py-2.5" : "gap-3 px-3 py-2",
                         "hover:bg-indigo-50 dark:hover:bg-slate-700 hover:text-indigo-700 dark:hover:text-indigo-300",
                         isActive
                           ? "bg-linear-to-r from-indigo-600 to-purple-600 text-white shadow-md"
