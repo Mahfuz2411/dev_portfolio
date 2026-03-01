@@ -6,6 +6,7 @@ import Achievements from "@/pages/Achievements";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import Projects from "@/pages/Projects";
+import Skills from "@/pages/Skills";
 
 
 
@@ -21,6 +22,10 @@ const router = createHashRouter([
             {
                 path: "about",
                 element: <About />
+            },
+            {
+                path: "skills",
+                element: <Skills />
             },
             {
                 path: "achievements",

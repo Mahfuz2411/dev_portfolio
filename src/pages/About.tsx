@@ -5,13 +5,6 @@ import { Code2, Rocket, Award, Heart, Calendar, MapPin } from "lucide-react";
 const About = () => {
     useHelmet("About Me - Portfolio");
 
-    const skills = [
-        { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vue.js"] },
-        { category: "Backend", items: ["Node.js", "Express", "MongoDB", "PostgreSQL", "Firebase"] },
-        { category: "Tools", items: ["Git", "Docker", "VS Code", "Figma", "Postman"] },
-        { category: "Others", items: ["REST APIs", "GraphQL", "Responsive Design", "Agile/Scrum"] }
-    ];
-
     const timeline = [
         { year: "2022", event: "Started coding journey", icon: Code2 },
         { year: "2023", event: "Started competitive programming", icon: Award },
@@ -87,35 +80,6 @@ const About = () => {
                             </p>
                         </div>
                     </Card>
-
-                    {/* Skills Section */}
-                    <div>
-                        <h3 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 text-left">
-                            💻 Skills & Technologies
-                        </h3>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {skills.map((skillGroup, index) => (
-                                <Card 
-                                    key={index}
-                                    className="p-6 border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
-                                >
-                                    <h4 className="text-lg font-bold text-indigo-600 dark:text-indigo-400 mb-4">
-                                        {skillGroup.category}
-                                    </h4>
-                                    <div className="space-y-2">
-                                        {skillGroup.items.map((skill, idx) => (
-                                            <div 
-                                                key={idx}
-                                                className="text-sm text-slate-700 dark:text-slate-300 py-1.5 px-3 bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-colors"
-                                            >
-                                                {skill}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </Card>
-                            ))}
-                        </div>
-                    </div>
 
                     {/* Journey Timeline */}
                     <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
