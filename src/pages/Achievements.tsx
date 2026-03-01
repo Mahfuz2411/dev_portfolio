@@ -1,6 +1,8 @@
 import { useHelmet } from "@/hooks/Helmet";
 import { Card } from "@/components/ui/card";
-import { Award } from "lucide-react";
+import { Award, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 import achievementImage01 from "@/assets/achievements/bubt-baps-camp-2025-certificate-.jpeg";
 import achievementImage02 from "@/assets/achievements/contest-judges.jpg";
@@ -14,6 +16,19 @@ interface AchievementItem {
 
 const Achievements = () => {
     useHelmet("Achievements - Portfolio");
+    const [selectedImage, setSelectedImage] = useState<AchievementItem | null>(null);
+
+    // Lock scroll when popup is open
+    useEffect(() => {
+        if (selectedImage) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [selectedImage]);
 
     const achievements: AchievementItem[] = [
         {
@@ -86,13 +101,14 @@ const Achievements = () => {
                     {achievements.map((item) => (
                         <Card 
                             key={item.id}
+                            onClick={() => setSelectedImage(item)}
                             className="group relative overflow-hidden cursor-pointer border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-2xl h-80"
                         >
                             {/* Image */}
                             <img 
                                 src={item.image}
                                 alt={item.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                className="w-full h-full object-contain bg-slate-100 dark:bg-slate-900 transition-transform duration-500 group-hover:scale-105"
                             />
                             
                             {/* Overlay with Details */}
@@ -115,6 +131,37 @@ const Achievements = () => {
                         </Card>
                     ))}
                 </div>
+
+                {/* Image Popup Modal */}
+                {selectedImage && createPortal(
+                    <div 
+                        className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            className="absolute top-4 right-4 z-50 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors"
+                            aria-label="Close"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+                        <div 
+                            className="flex flex-col items-center gap-4"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <img 
+                                src={selectedImage.image}
+                                alt={selectedImage.title}
+                                className="max-w-[90vw] max-h-[80vh] object-contain rounded-lg"
+                            />
+                            <div className="text-white text-center">
+                                <h3 className="text-xl font-bold">{selectedImage.title}</h3>
+                                <p className="text-slate-300 mt-1">Year: {selectedImage.year}</p>
+                            </div>
+                        </div>
+                    </div>,
+                    document.body
+                )}
             </div>
         </section>
     );

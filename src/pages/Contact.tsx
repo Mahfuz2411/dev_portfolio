@@ -106,17 +106,17 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 mb-12">
-                    {/* Contact Form */}
-                    <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
-                        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
-                            🌱 Plant a Seed
-                        </h2>
-                        <p className="text-slate-600 dark:text-slate-300 mb-6">
-                            Every great collaboration starts with a message
-                        </p>
+                {/* Contact Form - Full Width */}
+                <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm mb-8">
+                    <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
+                        🌱 Plant a Seed
+                    </h2>
+                    <p className="text-slate-600 dark:text-slate-300 mb-6">
+                        Every great collaboration starts with a message
+                    </p>
 
-                        <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                        <div className="grid sm:grid-cols-2 gap-5">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                     Your Name
@@ -146,124 +146,124 @@ const Contact = () => {
                                     placeholder="john@example.com"
                                 />
                             </div>
+                        </div>
 
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                                    Your Message
-                                </label>
-                                <Textarea
-                                    id="message"
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    required
-                                    rows={5}
-                                    className="resize-none"
-                                    placeholder="Tell me about your project or idea..."
-                                />
+                        <div>
+                            <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                Your Message
+                            </label>
+                            <Textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                                rows={5}
+                                className="resize-none"
+                                placeholder="Tell me about your project or idea..."
+                            />
+                        </div>
+
+                        {/* Success/Error Messages */}
+                        {submitStatus === 'success' && (
+                            <div className="p-4 bg-emerald-50 border-2 border-emerald-200 rounded-lg text-emerald-700">
+                                ✅ Thank you for planting a seed! 🌱 Message sent successfully.
                             </div>
+                        )}
+                        {submitStatus === 'error' && (
+                            <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg text-red-700">
+                                ❌ Oops! Something went wrong. Please try again or email directly.
+                            </div>
+                        )}
 
-                            {/* Success/Error Messages */}
-                            {submitStatus === 'success' && (
-                                <div className="p-4 bg-emerald-50 border-2 border-emerald-200 rounded-lg text-emerald-700">
-                                    ✅ Thank you for planting a seed! 🌱 Message sent successfully.
-                                </div>
+                        <Button 
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            {isSubmitting ? (
+                                <>
+                                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                    Sending...
+                                </>
+                            ) : (
+                                <>
+                                    <Send className="w-5 h-5" />
+                                    Send Message
+                                </>
                             )}
-                            {submitStatus === 'error' && (
-                                <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg text-red-700">
-                                    ❌ Oops! Something went wrong. Please try again or email directly.
-                                </div>
-                            )}
+                        </Button>
+                    </form>
+                </Card>
 
-                            <Button 
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {isSubmitting ? (
-                                    <>
-                                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                        Sending...
-                                    </>
-                                ) : (
-                                    <>
-                                        <Send className="w-5 h-5" />
-                                        Send Message
-                                    </>
-                                )}
-                            </Button>
-                        </form>
+                {/* Contact Info & Social Links - Side by Side */}
+                <div className="grid md:grid-cols-2 gap-8">
+                    {/* Contact Info */}
+                    <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+                        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+                            📍 Contact Information
+                        </h2>
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
+                                <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center shrink-0">
+                                    <MapPin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                                </div>
+                                <div>
+                                    <p className="font-semibold">Location</p>
+                                    <p className="text-sm text-slate-600 dark:text-slate-400">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
+                                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center shrink-0">
+                                    <Mail className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                <div>
+                                    <p className="font-semibold">Email</p>
+                                    <a href="mailto:mahfuzibnesyflu24@gmail.com" className="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        mahfuzibnesyflu24@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
+                                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-full flex items-center justify-center shrink-0">
+                                    <Phone className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                                </div>
+                                <div>
+                                    <p className="font-semibold">Phone</p>
+                                    <p className="text-sm text-slate-600 dark:text-slate-400">+8801732389350</p>
+                                </div>
+                            </div>
+                        </div>
                     </Card>
 
-                    {/* Contact Info & Social Links */}
-                    <div className="space-y-6">
-                        {/* Contact Info */}
-                        <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
-                            <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
-                                📍 Contact Information
-                            </h2>
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
-                                    <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center shrink-0">
-                                        <MapPin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">Location</p>
-                                        <p className="text-sm text-slate-600 dark:text-slate-400">Dhaka, Bangladesh</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
-                                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center shrink-0">
-                                        <Mail className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">Email</p>
-                                        <a href="mailto:mahfuzibnesyflu24@gmail.com" className="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                            mahfuzibnesyflu24@gmail.com
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
-                                    <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-full flex items-center justify-center shrink-0">
-                                        <Phone className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">Phone</p>
-                                        <p className="text-sm text-slate-600 dark:text-slate-400">+8801732389350</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card>
-
-                        {/* Social Links */}
-                        <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
-                            <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
-                                🔗 Connect With Me
-                            </h2>
-                            <div className="space-y-3">
-                                {socialLinks.map((social, index) => {
-                                    const Icon = social.icon;
-                                    return (
-                                        <a
-                                            key={index}
-                                            href={social.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-4 p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white dark:bg-slate-900 hover:shadow-lg transition-all duration-300 group"
-                                        >
-                                            <div className={`w-12 h-12 bg-linear-to-br ${social.color} rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
-                                                <Icon className="w-6 h-6 text-white" />
-                                            </div>
-                                            <div className="flex-1">
-                                                <p className="font-semibold text-slate-800 dark:text-slate-100">{social.name}</p>
-                                                <p className="text-sm text-slate-600 dark:text-slate-400">{social.handle}</p>
-                                            </div>
-                                        </a>
-                                    );
-                                })}
-                            </div>
-                        </Card>
-                    </div>
+                    {/* Social Links */}
+                    <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+                        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
+                            🔗 Connect With Me
+                        </h2>
+                        <div className="space-y-4">
+                            {socialLinks.map((social, index) => {
+                                const Icon = social.icon;
+                                return (
+                                    <a
+                                        key={index}
+                                        href={social.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 hover:border-indigo-300 dark:hover:border-indigo-500 bg-white dark:bg-slate-900 hover:shadow-lg transition-all duration-300 group"
+                                    >
+                                        <div className={`w-12 h-12 bg-linear-to-br ${social.color} rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+                                            <Icon className="w-6 h-6 text-white" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <p className="font-semibold text-slate-800 dark:text-slate-100">{social.name}</p>
+                                            <p className="text-sm text-slate-600 dark:text-slate-400">{social.handle}</p>
+                                        </div>
+                                    </a>
+                                );
+                            })}
+                        </div>
+                    </Card>
                 </div>
             </div>
         </section>
