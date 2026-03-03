@@ -97,34 +97,9 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
           </ul>
         </nav>
 
-        {/* Theme Toggle */}
-        <div
-          className={cn(
-            "px-4 py-3 transition-all duration-200 overflow-hidden",
-            isCollapsed ? "opacity-0 h-0 py-0" : "opacity-100 h-auto"
-          )}
-        >
-          <ThemeToggle />
-        </div>
-
-        {/* Footer */}
-        <div className="p-4 border-t border-slate-200 dark:border-slate-700">
-          <div
-            className={cn(
-              "transition-all duration-200 overflow-hidden text-center",
-              isCollapsed ? "opacity-0 h-0" : "opacity-100 h-auto"
-            )}
-          >
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Crafting digital experiences ✨
-            </p>
-          </div>
-
-          {isCollapsed && (
-            <div className="text-center">
-              <span className="text-lg">✨</span>
-            </div>
-          )}
+        {/* Theme Toggle at Bottom */}
+        <div className="p-4 border-t border-slate-200 dark:border-slate-700 overflow-hidden">
+          <ThemeToggle compact={isCollapsed} />
         </div>
       </div>
     </aside>

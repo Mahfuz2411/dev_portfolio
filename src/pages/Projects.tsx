@@ -36,15 +36,15 @@ const Projects = () => {
             {/* Projects Grid */}
             <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12">
                 {visibleProjects.map((project) => (
-                    <Card 
+                    <Card
                         key={project.id}
                         className="overflow-hidden border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                     >
                         <div className="grid md:grid-cols-2 gap-0">
                             {/* Project Image */}
                             <div className="relative h-56 sm:h-72 md:h-auto overflow-hidden bg-slate-100 dark:bg-slate-900">
-                                <img 
-                                    src={project.image} 
+                                <img
+                                    src={project.image}
                                     alt={project.name}
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
@@ -62,7 +62,7 @@ const Projects = () => {
                                             #{project.id}
                                         </div>
                                     </div>
-                                    
+
                                     <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                                         {project.description}
                                     </p>
@@ -70,7 +70,7 @@ const Projects = () => {
                                     {/* Tags */}
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {project.tags.map((tag, index) => (
-                                            <span 
+                                            <span
                                                 key={index}
                                                 className="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 rounded-full"
                                             >
