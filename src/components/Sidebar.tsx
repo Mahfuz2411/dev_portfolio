@@ -72,11 +72,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
                       )
                     }
                   >
-                    <Icon className="size-4 shrink-0" />
+                    <Icon className="size-5 shrink-0 self-center" />
 
                     <span
                       className={cn(
-                        "text-sm font-medium transition-all duration-200 overflow-hidden whitespace-nowrap",
+                        "text-sm font-medium transition-all duration-200 overflow-hidden whitespace-nowrap ",
                         isCollapsed
                           ? "opacity-0 w-0 ml-0"
                           : "opacity-100 w-auto ml-3"
