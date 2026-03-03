@@ -63,8 +63,8 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "flex items-center rounded-lg transition-colors duration-200 group relative",
-                        isCollapsed ? "justify-center py-2.5" : "px-3 py-2",
+                        "flex items-center rounded-lg transition-colors duration-200 group relative py-2",
+                        isCollapsed ? "justify-center px-0" : "px-3",
                         "hover:bg-indigo-50 dark:hover:bg-slate-700 hover:text-indigo-700 dark:hover:text-indigo-300",
                         isActive
                           ? "bg-linear-to-r from-indigo-600 to-purple-600 text-white shadow-md"
