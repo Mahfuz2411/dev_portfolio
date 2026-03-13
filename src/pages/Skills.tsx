@@ -24,6 +24,16 @@ import {
   SiRender
 } from "react-icons/si";
 
+const backgroundDots = Array.from({ length: 15 }, (_, index) => ({
+  id: index,
+  size: `${3 + Math.random() * 6}px`,
+  color: `rgba(${Math.random() > 0.5 ? "99,102,241" : "139,92,246"}, ${0.15 + Math.random() * 0.15})`,
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  delay: `${Math.random() * 8}s`,
+  duration: `${6 + Math.random() * 12}s`,
+}));
+
 const Skills = () => {
   useHelmet("Skills - Portfolio");
 
@@ -81,18 +91,18 @@ const Skills = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.08)_0%,transparent_70%)] animate-float" style={{ animationDuration: '15s' }} />
         <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.08)_0%,transparent_70%)] animate-float" style={{ animationDuration: '20s', animationDelay: '5s' }} />
-        {[...Array(15)].map((_, i) => (
+        {backgroundDots.map((dot) => (
           <div
-            key={i}
+            key={dot.id}
             className="absolute rounded-full animate-float"
             style={{
-              width: `${3 + Math.random() * 6}px`,
-              height: `${3 + Math.random() * 6}px`,
-              background: `rgba(${Math.random() > 0.5 ? '99,102,241' : '139,92,246'}, ${0.15 + Math.random() * 0.15})`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 8}s`,
-              animationDuration: `${6 + Math.random() * 12}s`
+              width: dot.size,
+              height: dot.size,
+              background: dot.color,
+              left: dot.left,
+              top: dot.top,
+              animationDelay: dot.delay,
+              animationDuration: dot.duration,
             }}
           />
         ))}
@@ -100,7 +110,7 @@ const Skills = () => {
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-14">
         {/* Header */}
-        <div className="text-left animate-fade-in">
+        <div className="text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
               Skills & Technologies
@@ -112,7 +122,7 @@ const Skills = () => {
         </div>
 
         {/* Section 1: What I Can Do */}
-        <div className="animate-fade-in" style={{ animationDelay: '0.15s' }}>
+        <div>
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
               <CheckCircle2 className="w-5 h-5" />
@@ -141,7 +151,7 @@ const Skills = () => {
         </div>
 
         {/* Section 2: Technologies */}
-        <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <div>
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 bg-linear-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
               <Code2 className="w-5 h-5" />
@@ -209,7 +219,7 @@ const Skills = () => {
         </div>
 
         {/* Section 3: Tools */}
-        <div className="animate-fade-in" style={{ animationDelay: '0.45s' }}>
+        <div>
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-linear-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
               <Wrench className="w-5 h-5" />

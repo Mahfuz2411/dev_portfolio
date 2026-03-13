@@ -7,6 +7,7 @@ import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import Projects from "@/pages/Projects";
 import Skills from "@/pages/Skills";
+import CpJourney from "@/pages/CpJourney";
 
 
 
@@ -42,6 +43,10 @@ const router = createHashRouter([
             {
                 path: "projects",
                 element: <Projects />
+            },
+            {
+                path: "cp-journey",
+                element: <CpJourney />
             }
 
         ]
