@@ -286,6 +286,27 @@
   animation: fade-in 1s ease-out forwards;
 }
 
+@keyframes splash-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.splash-progress {
+  width: 0%;
+  animation: splash-progress 1.5s ease-out forwards;
+}
+
+.splash-grid-overlay {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
 .animate-sway { 
   animation: sway 3s infinite ease-in-out;
   transform-origin: right bottom;

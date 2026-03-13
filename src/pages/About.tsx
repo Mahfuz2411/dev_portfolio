@@ -137,7 +137,7 @@ const About = () => {
                 </h3>
               </div>
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
-                <p>
+                {/* <p>
                   I'm a{" "}
                   <span className="font-semibold text-indigo-600 dark:text-indigo-400">
                     passionate developer
@@ -161,6 +161,17 @@ const About = () => {
                   technologies, contributing to open-source projects, or sharing
                   knowledge with the developer community. I'm always excited to
                   learn and grow! 🚀
+                </p> */}
+                <p>
+                  I am a Full Stack Web Developer with a strong interest in backend development, including building application logic, designing databases, and integrating APIs. While I have experience across the full stack, I particularly enjoy solving backend challenges and creating scalable systems.
+                </p>
+
+                <p>
+                  I have completed many small projects, and at the moment I am actively working on three personal projects: QuickShort, Numerica, and Streakzilla. I continuously implement what I learn throughout my learning journey in these projects.
+                </p>
+
+                <p>
+                  I have foundational knowledge of CI/CD pipelines and I am currently learning Docker to further strengthen my DevOps and deployment skills. I am always eager to learn new technologies and continuously improve my development expertise.
                 </p>
               </div>
             </Card>
