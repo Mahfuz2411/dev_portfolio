@@ -2,6 +2,7 @@ import { useHelmet } from "@/hooks/Helmet";
 import { FileUser } from "lucide-react";
 import downloadResume from "@/utils/Download";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   useHelmet("Home - Portfolio");
@@ -12,7 +13,7 @@ const Home = () => {
       <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Hero Content */}
         <div className="space-y-4 sm:space-y-6">
-          <h1 className="font-extrabold text-5xl sm:text-6xl text-slate-800 dark:text-slate-100 leading-tight">
+          <h1 className="font-extrabold text-4xl md:text-6xl text-slate-800 dark:text-slate-100 leading-tight">
             Welcome to My{" "}<br />
 
             <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -33,19 +34,30 @@ const Home = () => {
               <FileUser className="w-4 h-4 sm:w-5 sm:h-5" />
               Download Resume
             </Button>
+
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="text-sm sm:text-base"
+            >
+              <Link to="/contact">Contact</Link>
+            </Button>
           </div>
 
-          {/* Weather Widget */}
-          <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md border border-slate-200 dark:border-slate-700">
-            <span className="text-xl sm:text-2xl">☀️</span>
-            <span className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">Perfect day for coding • 22°C</span>
-          </div>
+          {/* Weather Widget (temporarily hidden) */}
+          {false && (
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md border border-slate-200 dark:border-slate-700">
+              <span className="text-xl sm:text-2xl">☀️</span>
+              <span className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">Perfect day for coding • 22°C</span>
+            </div>
+          )}
         </div>
 
         {/* Hero Garden - Animated Plant */}
-        <div className="hidden lg:flex relative h-125 items-end justify-end lg:pb-20">
+        <div className="relative flex h-88 sm:h-104 lg:h-125 items-end justify-center lg:justify-end pb-4 lg:pb-20">
           {/* Main Plant */}
-          <div className="relative transition-all duration-300">
+          <div className="relative transition-all duration-300 scale-75 sm:scale-90 lg:scale-100 origin-bottom">
             {/* Pot */}
             <div className="w-40 h-28 rounded-b-2xl rounded-t-md relative z-10"
               style={{

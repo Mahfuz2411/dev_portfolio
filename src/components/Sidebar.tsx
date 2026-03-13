@@ -1,4 +1,4 @@
-import { Award, Contact, House, Images, Sprout, Menu, Trophy, Code2 } from "lucide-react";
+import { Award, Contact, House, Images, Sprout, Menu, Code2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -16,7 +16,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
     { path: "/projects", label: "Project Garden", icon: Sprout, tooltip: "My Projects" },
     { path: "/about", label: "About Me", icon: Award, tooltip: "About Me" },
     { path: "/skills", label: "Skills", icon: Code2, tooltip: "Skills" },
-    { path: "/achievements", label: "Achievements", icon: Trophy, tooltip: "Achievements" },
     { path: "/gallery", label: "Gallery", icon: Images, tooltip: "Gallery" },
     { path: "/contact", label: "Contact", icon: Contact, tooltip: "Contact" },
   ];
