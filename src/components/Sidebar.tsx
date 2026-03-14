@@ -1,4 +1,4 @@
-import { Award, Contact, House, Images, Sprout, Menu, Code2, Binary } from "lucide-react";
+import { Award, Contact, House, Images, Sprout, Menu, Code2, Binary, GraduationCap } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -15,6 +15,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
     { path: "/", label: "Home", icon: House, tooltip: "Homepage" },
     { path: "/projects", label: "Project Garden", icon: Sprout, tooltip: "My Projects" },
     { path: "/about", label: "About Me", icon: Award, tooltip: "About Me" },
+    { path: "/education", label: "Education", icon: GraduationCap, tooltip: "Education" },
     { path: "/skills", label: "Skills", icon: Code2, tooltip: "Skills" },
     { path: "/cp-journey", label: "CP Journey", icon: Binary, tooltip: "CP Journey" },
     { path: "/gallery", label: "Gallery", icon: Images, tooltip: "Gallery" },
@@ -46,7 +47,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
             onClick={() => setIsCollapsed(!isCollapsed)}
             className="ml-auto"
           >
-            <Menu className="size-4" />
+            <Menu className="size-5" />
           </Button>
         </div>
 

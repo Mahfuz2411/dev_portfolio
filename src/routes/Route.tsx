@@ -8,6 +8,7 @@ import Contact from "@/pages/Contact";
 import Projects from "@/pages/Projects";
 import Skills from "@/pages/Skills";
 import CpJourney from "@/pages/CpJourney";
+import Education from "@/pages/Education";
 
 
 
@@ -47,6 +48,10 @@ const router = createHashRouter([
             {
                 path: "cp-journey",
                 element: <CpJourney />
+            },
+            {
+                path: "education",
+                element: <Education />
             }
 
         ]

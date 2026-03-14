@@ -113,10 +113,10 @@ const About = () => {
                 <div className="flex items-center justify-center gap-3 text-slate-700 dark:text-slate-300">
                   <Mail className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                   <a
-                    href="mailto:mahfuzibnesyflu24@gmail.com"
+                    href="mailto:mahfuzibnesyful24@gmail.com"
                     className="text-sm hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                   >
-                    mahfuzibnesyflu24@gmail.com
+                    mahfuzibnesyful24@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-slate-700 dark:text-slate-300">

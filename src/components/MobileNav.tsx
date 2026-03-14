@@ -1,4 +1,4 @@
-import { Award, Contact, House, Images, Sprout, Menu, X, Code2, Binary } from "lucide-react";
+import { Award, Contact, House, Images, Sprout, Menu, X, Code2, Binary, GraduationCap } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -14,6 +14,7 @@ const MobileNav = () => {
     { path: "/about", label: "About Me", icon: Award },
     { path: "/skills", label: "Skills", icon: Code2 },
     { path: "/cp-journey", label: "CP Journey", icon: Binary },
+    { path: "/education", label: "Education", icon: GraduationCap },
     { path: "/gallery", label: "Gallery", icon: Images },
     { path: "/contact", label: "Contact", icon: Contact },
   ];
