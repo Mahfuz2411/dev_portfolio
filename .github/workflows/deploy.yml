@@ -23,13 +23,6 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Remove ignoreDeprecations from tsconfig files
-        run: |
-          sed -i '/"ignoreDeprecations": "6.0",/d' tsconfig.app.json
-          sed -i '/"ignoreDeprecations": "6.0",/d' tsconfig.json
-
-
-
       - name: Install Dependencies
         run: npm install
       
@@ -45,7 +38,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Build
-        run: npm run build
+        run: npm run build:gh-pages
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:gh-pages": "tsc -b && VITE_ROUTER_MODE=hash VITE_BASE_PATH=/dev_portfolio/ vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

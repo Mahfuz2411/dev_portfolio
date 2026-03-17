@@ -12,9 +12,9 @@ const MobileNav = () => {
     { path: "/", label: "Home", icon: House },
     { path: "/projects", label: "Project Garden", icon: Sprout },
     { path: "/about", label: "About Me", icon: Award },
+    { path: "/education", label: "Education", icon: GraduationCap },
     { path: "/skills", label: "Skills", icon: Code2 },
     { path: "/cp-journey", label: "CP Journey", icon: Binary },
-    { path: "/education", label: "Education", icon: GraduationCap },
     { path: "/gallery", label: "Gallery", icon: Images },
     { path: "/contact", label: "Contact", icon: Contact },
   ];

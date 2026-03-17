@@ -45,13 +45,6 @@ const Home = () => {
             </Button>
           </div>
 
-          {/* Weather Widget (temporarily hidden) */}
-          {false && (
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-3 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md border border-slate-200 dark:border-slate-700">
-              <span className="text-xl sm:text-2xl">☀️</span>
-              <span className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">Perfect day for coding • 22°C</span>
-            </div>
-          )}
         </div>
 
         {/* Hero Garden - Animated Plant */}

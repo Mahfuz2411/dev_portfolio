@@ -1,5 +1,5 @@
 import App from "@/App";
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter, createHashRouter } from "react-router-dom";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Achievements from "@/pages/Achievements";
@@ -10,9 +10,7 @@ import Skills from "@/pages/Skills";
 import CpJourney from "@/pages/CpJourney";
 import Education from "@/pages/Education";
 
-
-
-const router = createHashRouter([
+const routes = [
     {
         path: "/",
         element: <App />,
@@ -56,7 +54,12 @@ const router = createHashRouter([
 
         ]
     }
-]);
+];
+
+// Default to BrowserRouter (Vercel/local). Use hash mode only for GH Pages builds.
+const router = import.meta.env.VITE_ROUTER_MODE === "hash"
+    ? createHashRouter(routes)
+    : createBrowserRouter(routes);
 
 
 export default router;
