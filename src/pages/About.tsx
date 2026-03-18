@@ -16,6 +16,7 @@ import {
 
 const About = () => {
   useHelmet("About Me - Portfolio");
+  const profileImageUrl = `${import.meta.env.BASE_URL}mahfuz_image.jpeg`;
 
   const timeline = [
     {
@@ -83,7 +84,7 @@ const About = () => {
             <Card className="p-6 text-center border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm h-full">
               <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-visible border-4 border-indigo-200 dark:border-indigo-800 shadow-xl">
                 <img
-                  src="/dev_portfolio/mahfuz_image.jpeg"
+                  src={profileImageUrl}
                   alt="Mahfuz"
                   className="w-full h-full object-cover rounded-full"
                 />
