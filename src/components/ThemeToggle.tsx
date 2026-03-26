@@ -27,7 +27,7 @@ export const ThemeToggle = ({ compact = false }: ThemeToggleProps) => {
     return (
       <button
         onClick={cycleTheme}
-        className="w-full flex items-center justify-center p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 hover:bg-slate-300 dark:hover:bg-slate-600 transition-all duration-200"
+        className="w-full flex items-center justify-center p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 hover:bg-slate-300 dark:hover:bg-slate-600 transition-all duration-200 cursor-pointer"
         title={`Current: ${currentTheme?.label} (Click to change)`}
         aria-label="Toggle theme"
       >
@@ -43,7 +43,7 @@ export const ThemeToggle = ({ compact = false }: ThemeToggleProps) => {
           key={value}
           onClick={() => setTheme(value)}
           className={`
-                        flex items-center justify-center gap-1 py-2 rounded-md transition-all duration-200 flex-1 min-w-0 flex-nowrap
+                        flex items-center justify-center gap-1 py-2 rounded-md transition-all duration-200 flex-1 min-w-0 flex-nowrap cursor-pointer
                         ${theme === value
               ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-sm'
               : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'

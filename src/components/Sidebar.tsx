@@ -45,7 +45,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
             variant="ghost"
             size="icon-sm"
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="ml-auto"
+            className="ml-auto cursor-pointer"
           >
             <Menu className="size-5" />
           </Button>

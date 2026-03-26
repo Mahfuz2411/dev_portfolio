@@ -29,7 +29,7 @@ const Home = () => {
             <Button
               onClick={downloadResume}
               size="lg"
-              className="bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+              className="bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base cursor-pointer"
             >
               <FileUser className="w-4 h-4 sm:w-5 sm:h-5" />
               Download Resume

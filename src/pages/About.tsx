@@ -218,7 +218,7 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="group relative p-4 sm:p-5 rounded-xl bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-700/50 border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:shadow-lg cursor-pointer"
+                  className="group relative p-4 sm:p-5 rounded-xl bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-700/50 border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:shadow-lg"
                 >
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div
