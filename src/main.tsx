@@ -5,6 +5,8 @@ import { RouterProvider } from 'react-router-dom'
 import router from '@/routes/Route';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
+// Minor change for Vercel deployment test. No actual code changes here.
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
