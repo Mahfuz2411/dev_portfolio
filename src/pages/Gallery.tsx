@@ -109,7 +109,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden animate-fade-in">
+    <section className="min-h-screen sm:py-8 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden animate-fade-in">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-left mb-12">
