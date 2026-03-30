@@ -77,7 +77,7 @@ const Contact = () => {
       name: 'Facebook',
       icon: Facebook,
       link: '#',
-      value: 'facebook.com/mahfuzibnesyful',
+      value: 'https://www.facebook.com/mahfuzibnesyful',
       iconColor: 'text-blue-600'
     },
     {
@@ -85,7 +85,7 @@ const Contact = () => {
       name: 'Instagram',
       icon: Instagram,
       link: '#',
-      value: 'instagram.com/mahfuz_ibne_syful',
+      value: 'https://www.instagram.com/mahfuz_ibne_syful/',
       iconColor: 'text-pink-500'
     }
   ];
