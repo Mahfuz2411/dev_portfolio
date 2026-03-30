@@ -13,9 +13,9 @@ interface SidebarProps {
 const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
   const navItems = [
     { path: "/", label: "Home", icon: House, tooltip: "Homepage" },
-    { path: "/projects", label: "Project Garden", icon: Sprout, tooltip: "My Projects" },
     { path: "/about", label: "About Me", icon: Award, tooltip: "About Me" },
     { path: "/education", label: "Education", icon: GraduationCap, tooltip: "Education" },
+    { path: "/projects", label: "Project Garden", icon: Sprout, tooltip: "My Projects" },
     { path: "/skills", label: "Skills", icon: Code2, tooltip: "Skills" },
     { path: "/cp-journey", label: "CP Journey", icon: Binary, tooltip: "CP Journey" },
     { path: "/gallery", label: "Gallery", icon: Images, tooltip: "Gallery" },
