@@ -76,16 +76,16 @@ const Contact = () => {
       label: 'FACEBOOK',
       name: 'Facebook',
       icon: Facebook,
-      link: '#',
-      value: 'https://www.facebook.com/mahfuzibnesyful',
+      link: 'https://www.facebook.com/mahfuzibnesyful',
+      value: 'facebook.com/mahfuzibnesyful',
       iconColor: 'text-blue-600'
     },
     {
       label: 'INSTAGRAM',
       name: 'Instagram',
       icon: Instagram,
-      link: '#',
-      value: 'https://www.instagram.com/mahfuz_ibne_syful/',
+      link: 'https://www.instagram.com/mahfuz_ibne_syful/',
+      value: 'instagram.com/mahfuz_ibne_syful/',
       iconColor: 'text-pink-500'
     }
   ];
