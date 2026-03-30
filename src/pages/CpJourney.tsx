@@ -1,29 +1,10 @@
 import { useHelmet } from "@/hooks/Helmet";
 import { Card } from "@/components/ui/card";
-import type { ComponentType, SVGProps } from "react";
 import { ExternalLink } from "lucide-react";
-import type { IconType } from "react-icons";
-import {
-  SiCodechef,
-  SiCodeforces,
-  SiHackerrank,
-  SiLeetcode,
-} from "react-icons/si";
-
-type LogoComponent = IconType | ComponentType<{ className?: string }>;
-
-const AtCoderLogo = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-    <path
-      d="M12 3 4.75 20.5h3.45l1.45-3.6h4.7l1.42 3.6h3.48L12 3Zm-1.2 10.98L12 10.8l1.18 3.18H10.8Z"
-      fill="currentColor"
-    />
-  </svg>
-);
 
 type Platform = {
   name: string;
-  icon: LogoComponent;
+  logo: string;
   color: string;
   border: string;
   badge: string;
@@ -35,7 +16,7 @@ type Platform = {
 const platforms: Platform[] = [
   {
     name: "LeetCode",
-    icon: SiLeetcode,
+    logo: "/platform-logos/leetcode.png",
     color: "from-yellow-500 to-orange-500",
     border: "hover:border-yellow-400 dark:hover:border-yellow-500",
     badge: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300",
@@ -45,7 +26,7 @@ const platforms: Platform[] = [
   },
   {
     name: "Codeforces",
-    icon: SiCodeforces,
+    logo: "/platform-logos/codeforces.png",
     color: "from-blue-500 to-cyan-500",
     border: "hover:border-blue-400 dark:hover:border-blue-500",
     badge: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300",
@@ -55,7 +36,7 @@ const platforms: Platform[] = [
   },
   {
     name: "AtCoder",
-    icon: AtCoderLogo,
+    logo: "/platform-logos/atcoder.png",
     color: "from-slate-500 to-slate-700",
     border: "hover:border-slate-400 dark:hover:border-slate-400",
     badge: "bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300",
@@ -65,7 +46,7 @@ const platforms: Platform[] = [
   },
   {
     name: "HackerRank",
-    icon: SiHackerrank,
+    logo: "/platform-logos/hackerrank.png",
     color: "from-green-500 to-emerald-600",
     border: "hover:border-green-400 dark:hover:border-green-500",
     badge: "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300",
@@ -75,13 +56,23 @@ const platforms: Platform[] = [
   },
   {
     name: "CodeChef",
-    icon: SiCodechef,
+    logo: "/platform-logos/codechef.jpg",
     color: "from-amber-600 to-orange-700",
     border: "hover:border-amber-400 dark:hover:border-amber-500",
     badge: "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300",
     problemsSolved: "240+",
     rating: "1513",
     profileLink: "https://www.codechef.com/users/mahfuz2411",
+  },
+  {
+    name: "Virtual Judge",
+    logo: "/platform-logos/vjudge.png",
+    color: "from-violet-500 to-purple-600",
+    border: "hover:border-violet-400 dark:hover:border-violet-500",
+    badge: "bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300",
+    problemsSolved: "100+",
+    rating: "",
+    profileLink: "https://vjudge.net/user/Mahfuz2411",
   },
 ];
 
@@ -116,7 +107,6 @@ const CpJourney = () => {
         {/* Platform Cards */}
         <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {platforms.map((platform) => {
-            const Icon = platform.icon;
             return (
               <Card
                 key={platform.name}
@@ -125,9 +115,13 @@ const CpJourney = () => {
                 {/* Platform Header */}
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className={`w-10 h-10 rounded-lg bg-linear-to-br ${platform.color} flex items-center justify-center shadow-lg`}
+                    className={`w-10 h-10 rounded-lg bg-white dark:bg-slate-700 flex items-center justify-center shadow-lg p-1.5`}
                   >
-                    <Icon className="w-5 h-5 text-white" />
+                    <img 
+                      src={platform.logo} 
+                      alt={`${platform.name} logo`}
+                      className="w-full h-full object-contain rounded-sm"
+                    />
                   </div>
                   <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100">
                     {platform.name}
