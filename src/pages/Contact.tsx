@@ -3,8 +3,9 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Send, Facebook, Instagram, Link2 } from "lucide-react";
+import { Send, Link2 } from "lucide-react";
 import { useState } from "react";
+import { socialLinks } from "@/data/contact";
 
 const Contact = () => {
   useHelmet("Contact - Portfolio");
@@ -54,41 +55,6 @@ const Contact = () => {
       [e.target.name]: e.target.value
     });
   };
-
-  const socialLinks = [
-    {
-      label: 'GITHUB',
-      name: 'GitHub',
-      icon: Github,
-      link: 'https://github.com/mahfuz2411',
-      value: 'github.com/mahfuz2411',
-      iconColor: 'text-indigo-500'
-    },
-    {
-      label: 'LINKEDIN',
-      name: 'LinkedIn',
-      icon: Linkedin,
-      link: 'https://www.linkedin.com/in/mahfuz-ibne-syful/',
-      value: 'linkedin.com/in/mahfuz-ibne-syful',
-      iconColor: 'text-blue-500'
-    },
-    {
-      label: 'FACEBOOK',
-      name: 'Facebook',
-      icon: Facebook,
-      link: 'https://www.facebook.com/mahfuzibnesyful',
-      value: 'facebook.com/mahfuzibnesyful',
-      iconColor: 'text-blue-600'
-    },
-    {
-      label: 'INSTAGRAM',
-      name: 'Instagram',
-      icon: Instagram,
-      link: 'https://www.instagram.com/mahfuz_ibne_syful/',
-      value: 'instagram.com/mahfuz_ibne_syful/',
-      iconColor: 'text-pink-500'
-    }
-  ];
 
   return (
     <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16 animate-fade-in">

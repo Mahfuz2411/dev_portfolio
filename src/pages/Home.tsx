@@ -1,11 +1,36 @@
 import { useHelmet } from "@/hooks/Helmet";
-import { FileUser } from "lucide-react";
-import downloadResume from "@/utils/Download";
+import { FileUser, X } from "lucide-react";
+import downloadResume, { viewResume } from "@/utils/Download";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const Home = () => {
   useHelmet("Home - Portfolio");
+  const [isResumePopupOpen, setIsResumePopupOpen] = useState(false);
+
+  useEffect(() => {
+    if (isResumePopupOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isResumePopupOpen]);
+
+  const handleViewResume = () => {
+    viewResume();
+    setIsResumePopupOpen(false);
+  };
+
+  const handleDownloadResume = () => {
+    downloadResume();
+    setIsResumePopupOpen(false);
+  };
 
   return (
     <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16 animate-fade-in">
@@ -27,12 +52,12 @@ const Home = () => {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
             <Button
-              onClick={downloadResume}
+              onClick={() => setIsResumePopupOpen(true)}
               size="lg"
               className="bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base cursor-pointer"
             >
               <FileUser className="w-4 h-4 sm:w-5 sm:h-5" />
-              Download Resume
+              Resume
             </Button>
 
             <Button
@@ -121,6 +146,51 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {isResumePopupOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setIsResumePopupOpen(false)}
+          >
+            <div
+              className="w-full max-w-md rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl p-5 sm:p-6"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100">
+                  what do you want?
+                </h2>
+                <button
+                  type="button"
+                  onClick={() => setIsResumePopupOpen(false)}
+                  aria-label="Close"
+                  className="rounded-lg p-1 text-slate-500 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <Button
+                  type="button"
+                  onClick={handleViewResume}
+                  className="flex-1 bg-slate-800 hover:bg-slate-900 text-white"
+                >
+                  View
+                </Button>
+                <Button
+                  type="button"
+                  onClick={handleDownloadResume}
+                  className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white"
+                >
+                  Download
+                </Button>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </section>
   );
 };

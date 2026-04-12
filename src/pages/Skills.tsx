@@ -1,28 +1,6 @@
 import { useHelmet } from "@/hooks/Helmet";
-import { CheckCircle2, Code2, Database, Palette, GitBranch, Zap, FileCode, Boxes, Wrench } from "lucide-react";
-import {
-  SiTypescript,
-  SiMongodb,
-  SiMongoose,
-  SiExpress,
-  SiReact,
-  SiNodedotjs,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiPython,
-  SiFirebase,
-  SiSupabase,
-  SiDiscord,
-  SiGit,
-  SiGithub,
-  SiGithubactions,
-  SiGithubcopilot,
-  SiNotion,
-  SiFigma,
-  SiVercel,
-  SiNetlify,
-  SiRender
-} from "react-icons/si";
+import { Code2, MonitorSmartphone, Wrench } from "lucide-react";
+import { skillCategories, technologies, tools } from "@/data/skills";
 
 const backgroundDots = Array.from({ length: 15 }, (_, index) => ({
   id: index,
@@ -36,54 +14,6 @@ const backgroundDots = Array.from({ length: 15 }, (_, index) => ({
 
 const Skills = () => {
   useHelmet("Skills - Portfolio");
-
-  const skillsList = [
-    { name: "RESTful API Design & Integration", icon: Zap },
-    { name: "JWT & OAuth Authentication", icon: CheckCircle2 },
-    { name: "Database Design & Optimization", icon: Database },
-    { name: "Responsive Web Design", icon: Palette },
-    { name: "Version Control & Git Workflows", icon: GitBranch },
-    { name: "State Management (Context API)", icon: Boxes },
-    { name: "Server-Side Rendering (SSR)", icon: FileCode },
-    { name: "API Testing & Documentation", icon: CheckCircle2 },
-    { name: "Agile/Scrum Methodologies", icon: CheckCircle2 },
-    { name: "UI/UX Implementation", icon: Palette },
-    { name: "Performance Optimization", icon: Zap },
-    { name: "Error Handling & Debugging", icon: Code2 }
-  ];
-
-  const technologies = {
-    primary: [
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "MongoDB", icon: SiMongodb },
-      { name: "Express", icon: SiExpress },
-      { name: "React", icon: SiReact },
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "Mongoose", icon: SiMongoose },
-      { name: "Tailwind CSS", icon: SiTailwindcss }
-    ],
-    secondary: [
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Firebase", icon: SiFirebase },
-      { name: "Supabase", icon: SiSupabase },
-      { name: "Discord.js", icon: SiDiscord },
-      { name: "Python", icon: SiPython },
-      { name: "Pygame", icon: SiPython }
-    ]
-  };
-
-  const tools = [
-    { name: "Git", icon: SiGit },
-    { name: "GitHub", icon: SiGithub },
-    { name: "GitHub Actions", icon: SiGithubactions },
-    { name: "GitHub Copilot", icon: SiGithubcopilot },
-    { name: "Notion", icon: SiNotion },
-    { name: "Figma", icon: SiFigma },
-    { name: "VS Code", icon: Code2 },
-    { name: "Vercel", icon: SiVercel },
-    { name: "Netlify", icon: SiNetlify },
-    { name: "Render", icon: SiRender }
-  ];
 
   return (
     <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16 animate-fade-in">
@@ -125,25 +55,50 @@ const Skills = () => {
         <div>
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
-              <CheckCircle2 className="w-5 h-5" />
+              <MonitorSmartphone className="w-5 h-5" />
             </div>
             <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">What I Can Do</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {skillsList.map((skill, index) => {
-              const Icon = skill.icon;
+          <div className="space-y-10">
+            {skillCategories.map((category) => {
+              const CategoryIcon = category.icon;
               return (
                 <div
-                  key={index}
-                  className="group flex items-center gap-3 p-4 rounded-xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 border border-slate-200/80 dark:border-slate-700/80 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-lg hover:shadow-indigo-500/5"
-                  style={{ animationDelay: `${index * 0.05}s` }}
+                  key={category.title}
                 >
-                  <div className="w-9 h-9 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center shrink-0 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-800/50 transition-colors duration-300">
-                    <Icon className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-slate-100 dark:bg-slate-800/80`}>
+                      <CategoryIcon className={`w-4 h-4 ${category.iconClass}`} />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <div className={`w-2 h-2 rounded-full ${category.dotClass}`} />
+                        <h3 className={`text-base font-semibold uppercase tracking-wider ${category.headingClass}`}>
+                          {category.title}
+                        </h3>
+                      </div>
+                      <div className={`mt-2 h-px bg-linear-to-r ${category.lineClass}`} />
+                    </div>
                   </div>
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                    {skill.name}
-                  </span>
+
+                  <div className="space-y-3 pl-12 sm:pl-12">
+                    {category.skills.map((skill) => {
+                      const SkillIcon = skill.icon;
+                      return (
+                        <div
+                          key={skill.name}
+                          className="flex items-center gap-3 pb-3 border-b border-slate-200/70 dark:border-slate-700/70 last:border-b-0 last:pb-0"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800/80 flex items-center justify-center shrink-0">
+                            <SkillIcon className={`w-4 h-4 ${category.iconClass}`} />
+                          </div>
+                          <span className="text-sm sm:text-base font-medium text-slate-700 dark:text-slate-300 leading-snug">
+                            {skill.name}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}

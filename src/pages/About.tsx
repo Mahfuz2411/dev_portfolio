@@ -1,15 +1,8 @@
 import { useHelmet } from "@/hooks/Helmet";
 import { Card } from "@/components/ui/card";
+import { quickFacts, timeline } from "@/data/about";
 import {
-  Code2,
-  Rocket,
-  Award,
-  Heart,
-  MapPin,
   Sparkles,
-  Target,
-  Coffee,
-  Book,
   Mail,
   Phone,
 } from "lucide-react";
@@ -17,40 +10,6 @@ import {
 const About = () => {
   useHelmet("About Me - Portfolio");
   const profileImageUrl = `${import.meta.env.BASE_URL}mahfuz_image.jpeg`;
-
-  const timeline = [
-    {
-      year: "2022",
-      event: "Started coding journey",
-      icon: Code2,
-      color: "from-blue-500 to-cyan-600",
-    },
-    {
-      year: "2023",
-      event: "Started competitive programming",
-      icon: Award,
-      color: "from-amber-500 to-orange-600",
-    },
-    {
-      year: "2024",
-      event: "Started web development",
-      icon: Rocket,
-      color: "from-purple-500 to-pink-600",
-    },
-    {
-      year: "2025",
-      event: "The journey continues...",
-      icon: Heart,
-      color: "from-rose-500 to-red-600",
-    },
-  ];
-
-  const quickFacts = [
-    { label: "Location", value: "Bangladesh", icon: MapPin },
-    { label: "Focus", value: "Full Stack Development", icon: Target },
-    { label: "Learning", value: "Always Something New", icon: Book },
-    { label: "Fuel", value: "Coffee & Code", icon: Coffee },
-  ];
 
   return (
     <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16 animate-fade-in">
