@@ -165,7 +165,7 @@ const Home = () => {
                   type="button"
                   onClick={() => setIsResumePopupOpen(false)}
                   aria-label="Close"
-                  className="rounded-lg p-1 text-slate-500 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="rounded-lg p-1 text-slate-500 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -175,14 +175,14 @@ const Home = () => {
                 <Button
                   type="button"
                   onClick={handleViewResume}
-                  className="flex-1 bg-slate-800 hover:bg-slate-900 text-white"
+                  className="flex-1 bg-slate-800 hover:bg-slate-900 text-white cursor-pointer"
                 >
                   View
                 </Button>
                 <Button
                   type="button"
                   onClick={handleDownloadResume}
-                  className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white"
+                  className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white cursor-pointer"
                 >
                   Download
                 </Button>

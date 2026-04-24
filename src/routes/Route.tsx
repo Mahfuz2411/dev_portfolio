@@ -9,6 +9,7 @@ import Projects from "@/pages/Projects";
 import Skills from "@/pages/Skills";
 import CpJourney from "@/pages/CpJourney";
 import Education from "@/pages/Education";
+import Error from "@/pages/Error";
 
 const routes = [
     {
@@ -50,8 +51,11 @@ const routes = [
             {
                 path: "education",
                 element: <Education />
+            },
+            {
+                path: "*",
+                element: <Error />
             }
-
         ]
     }
 ];
