@@ -1,6 +1,7 @@
 import { useHelmet } from "@/hooks/Helmet";
 import { Card } from "@/components/ui/card";
-import { quickFacts, timeline } from "@/data/about";
+import { quickFacts } from "@/data/about";
+// import { timeline } from "@/data/about";
 import {
   Sparkles,
   Mail,
@@ -166,7 +167,7 @@ const About = () => {
         </div>
 
         {/* Journey Timeline */}
-        <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+        {/* <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
           <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center gap-2">
             <span className="text-2xl">🌱</span>
             My Journey
@@ -198,7 +199,7 @@ const About = () => {
               );
             })}
           </div>
-        </Card>
+        </Card> */}
       </div>
     </section>
   );

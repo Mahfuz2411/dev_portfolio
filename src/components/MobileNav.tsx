@@ -25,7 +25,7 @@ const MobileNav = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 shadow-sm">
         <div className="flex items-center justify-between px-4 py-3">
           <h1 className="text-lg font-bold bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            ✨ Portfolio
+             Portfolio
           </h1>
           <Button
             variant="ghost"

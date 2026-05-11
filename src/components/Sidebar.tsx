@@ -38,7 +38,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
               isCollapsed ? "opacity-0 w-0" : "opacity-100 w-auto"
             )}
           >
-            ✨ Portfolio
+             Portfolio
           </h1>
 
           <Button

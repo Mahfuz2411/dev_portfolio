@@ -1,4 +1,4 @@
-const resumePath = `${import.meta.env.BASE_URL}mahfuz_resume001.pdf`;
+const resumePath = `${import.meta.env.BASE_URL}resume003.pdf`;
 
 export const viewResume = () => {
   window.open(resumePath, "_blank", "noopener,noreferrer");
