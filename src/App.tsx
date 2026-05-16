@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-purple-50 to-indigo-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-slate-950 text-slate-100">
       {/* Global Floating Particles Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {particleDots.map((dot) => (
@@ -50,7 +50,7 @@ function App() {
 
       {showSplash && (
         <div className="fixed inset-0 z-120 flex items-center justify-center px-4">
-          <div className="absolute inset-0 bg-linear-to-br from-slate-50 via-purple-50 to-indigo-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+          <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950" />
           <div className="absolute inset-0 pointer-events-none">
             {particleDots.map((dot) => (
               <div
@@ -66,7 +66,7 @@ function App() {
             ))}
           </div>
 
-          <div className="relative w-full max-w-2xl rounded-2xl border border-indigo-400/20 bg-white/70 dark:bg-slate-900/55 px-5 py-6 sm:px-8 sm:py-8 shadow-2xl backdrop-blur-md">
+          <div className="relative w-full max-w-2xl border border-cyan-400/20 bg-slate-950/75 px-5 py-6 sm:px-8 sm:py-8 shadow-2xl backdrop-blur-md">
 
             <p className="text-[11px] tracking-[0.3em] text-indigo-600/90 dark:text-indigo-300/90 font-semibold">PORTFOLIO</p>
             <h2 className="mt-3 text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
@@ -89,7 +89,7 @@ function App() {
           <div className="hidden lg:block">
             <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
           </div>
-          <main className={`transition-all duration-300 ${isCollapsed ? 'lg:ml-16' : 'lg:ml-64'} relative z-10`}>
+          <main className={`transition-all duration-300 ${isCollapsed ? 'lg:mr-16' : 'lg:mr-64'} relative z-10`}>
             <Outlet />
           </main>
         </>
