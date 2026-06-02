@@ -41,7 +41,7 @@ const About = () => {
         <div className="grid lg:grid-cols-3 gap-6 mb-8">
           {/* Profile Card - Spans 1 column */}
           <div className="lg:col-span-1">
-            <Card className="p-6 text-center border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm h-full">
+            <Card className="p-6 text-center border-t border-r border-cyan-400/30 bg-slate-900/60 backdrop-blur-md h-full">
               <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-visible border-4 border-indigo-200 dark:border-indigo-800 shadow-xl">
                 <img
                   src={profileImageUrl}
@@ -90,7 +90,7 @@ const About = () => {
 
           {/* Bio Card - Spans 2 columns */}
           <div className="lg:col-span-2">
-            <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm h-full">
+            <Card className="p-6 sm:p-8 border-t border-r border-cyan-400/30 bg-slate-900/60 backdrop-blur-md h-full">
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
@@ -178,7 +178,7 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="group relative p-4 sm:p-5 rounded-xl bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-700/50 border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:shadow-lg"
+                  className="group relative p-4 sm:p-5 bg-slate-800/30 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
                 >
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div

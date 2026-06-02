@@ -38,7 +38,7 @@ const Projects = () => {
         {visibleProjects.map((project) => (
           <Card
             key={project.id}
-            className="overflow-hidden border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
+            className="overflow-hidden border-t border-r border-cyan-400/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl bg-slate-900/60 backdrop-blur-md"
           >
             <div className="grid md:grid-cols-2 gap-0">
               {/* Project Image */}

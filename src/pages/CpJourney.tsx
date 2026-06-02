@@ -37,7 +37,7 @@ const CpJourney = () => {
             return (
               <Card
                 key={platform.name}
-                className={`p-4 sm:p-5 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl ${platform.border}`}
+                className={`p-4 sm:p-5 border-t border-r border-cyan-400/30 bg-slate-900/60 backdrop-blur-md transition-all duration-300 hover:shadow-xl hover:border-cyan-400/50`}
               >
                 {/* Platform Header */}
                 <div className="flex items-center gap-3 mb-4">

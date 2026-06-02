@@ -29,7 +29,7 @@ const Education = () => {
           </p>
         </div>
 
-        <Card className="p-5 sm:p-7 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm space-y-6">
+        <Card className="p-5 sm:p-7 border-t border-r border-cyan-400/30 bg-slate-900/60 backdrop-blur-md space-y-6">
           <div className="flex items-start gap-4">
             <div className="w-11 h-11 rounded-xl bg-linear-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shrink-0">
               <GraduationCap className="w-5 h-5" />

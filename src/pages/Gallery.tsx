@@ -55,7 +55,7 @@ const Gallery = () => {
             <Card
               key={item.id}
               onClick={() => setSelectedImage(item)}
-              className={`${getSizeClass(item.size)} group relative overflow-hidden cursor-pointer border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-2xl`}
+              className={`${getSizeClass(item.size)} group relative overflow-hidden cursor-pointer border-t border-r border-cyan-400/30 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-2xl`}
             >
               {/* Image */}
               <img

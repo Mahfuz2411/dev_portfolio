@@ -73,7 +73,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Form - Full Width */}
-        <Card className="p-6 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm mb-8 gap-4">
+        <Card className="p-6 border-t border-r border-cyan-400/30 bg-slate-900/60 backdrop-blur-md mb-8 gap-4">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
             🌱 Plant a Seed
           </h2>
@@ -163,7 +163,7 @@ const Contact = () => {
         </Card>
 
         {/* Social Links Section */}
-        <Card className="p-6 sm:p-8 border-2 border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+        <Card className="p-6 sm:p-8 border-t border-r border-cyan-400/30 bg-slate-900/60 backdrop-blur-md">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
               <Link2 className="w-5 h-5" />
@@ -182,7 +182,7 @@ const Contact = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 border border-slate-200/80 dark:border-slate-700/80 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-lg hover:shadow-indigo-500/10 cursor-pointer"
+                  className="group flex items-center gap-4 p-4 bg-slate-800/40 backdrop-blur-sm hover:bg-slate-800/60 transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40 hover:shadow-lg hover:shadow-cyan-500/10 cursor-pointer"
                 >
                   <div className="w-12 h-12 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center shrink-0 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-800/50 transition-colors duration-300">
                     <Icon className={`w-6 h-6 ${social.iconColor} dark:text-indigo-400`} />

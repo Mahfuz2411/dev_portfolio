@@ -154,7 +154,7 @@ const Home = () => {
             onClick={() => setIsResumePopupOpen(false)}
           >
             <div
-              className="w-full max-w-md rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl p-5 sm:p-6"
+              className="w-full max-w-md border-t border-r border-cyan-400/30 bg-slate-900/80 backdrop-blur-md shadow-2xl p-5 sm:p-6"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="flex items-start justify-between gap-3">
