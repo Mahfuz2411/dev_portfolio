@@ -1,14 +1,34 @@
 import { useHelmet } from "@/hooks/Helmet";
-import { FileUser, X } from "lucide-react";
+import { FileUser, TerminalSquare, X } from "lucide-react";
 import downloadResume, { viewResume } from "@/utils/Download";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+
+type TerminalLine = {
+  type: "input" | "output";
+  text: string;
+};
+
+const commandHelp = [
+  "whoami - see who this is",
+  "about - short bio",
+  "projects - featured work",
+  "skills - tech stack overview",
+  "contact - contact details",
+  "resume - view or download resume",
+  "help - show commands",
+  "clear - clear terminal",
+];
 
 const Home = () => {
   useHelmet("Home - Portfolio");
   const [isResumePopupOpen, setIsResumePopupOpen] = useState(false);
+  const [terminalInput, setTerminalInput] = useState("");
+  const [terminalLines, setTerminalLines] = useState<TerminalLine[]>([]);
+  const terminalInputRef = useRef<HTMLInputElement | null>(null);
+  const terminalScrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (isResumePopupOpen) {
@@ -32,21 +52,101 @@ const Home = () => {
     setIsResumePopupOpen(false);
   };
 
+  const runCommand = (rawCommand: string) => {
+    const command = rawCommand.trim().toLowerCase();
+
+    if (!command) {
+      return;
+    }
+
+    setTerminalLines((current) => {
+      const nextLines: TerminalLine[] = [...current, { type: "input", text: rawCommand }];
+
+      switch (command) {
+        case "help":
+          nextLines.push({
+            type: "output",
+            text: commandHelp.join("\n"),
+          });
+          break;
+        case "whoami":
+          nextLines.push({
+            type: "output",
+            text: "Mahfuz Ibne Syful | Full Stack Developer | Backend focused",
+          });
+          break;
+        case "about":
+          nextLines.push({
+            type: "output",
+            text: "I build web apps, APIs, and systems with a strong focus on backend engineering, scalability, and clean delivery.",
+          });
+          break;
+        case "projects":
+          nextLines.push({
+            type: "output",
+            text: "QuickShort, Numerica, and Streakzilla are my featured projects. Use the Projects page for full details.",
+          });
+          break;
+        case "skills":
+          nextLines.push({
+            type: "output",
+            text: "TypeScript, React, Node.js, Express, MongoDB, Docker, CI/CD, Tailwind CSS.",
+          });
+          break;
+        case "contact":
+          nextLines.push({
+            type: "output",
+            text: "Email: mahfuzibnesyful24@gmail.com | Phone: +8801732389350",
+          });
+          break;
+        case "resume":
+          nextLines.push({
+            type: "output",
+            text: "Use the Resume buttons below to view or download the PDF.",
+          });
+          break;
+        case "clear":
+          // Clear all lines silently
+          return [];
+        default:
+          nextLines.push({
+            type: "output",
+            text: `Unknown command: ${rawCommand}. Type help.`,
+          });
+      }
+
+      return nextLines;
+    });
+
+    setTerminalInput("");
+    window.requestAnimationFrame(() => {
+      terminalInputRef.current?.focus();
+    });
+  };
+
+  useEffect(() => {
+    // keep terminal scrolled to bottom whenever lines change
+    const el = terminalScrollRef.current;
+    if (el) {
+      el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+    }
+  }, [terminalLines]);
+
   return (
     <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16 animate-fade-in">
       {/* Hero Container */}
-      <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         {/* Hero Content */}
-        <div className="space-y-4 sm:space-y-6">
-          <h1 className="font-extrabold text-4xl md:text-6xl text-slate-800 dark:text-slate-100 leading-tight">
+        <div className="space-y-4 sm:space-y-6 lg:pt-4">
+          <h1 className="font-extrabold text-4xl md:text-5xl lg:text-6xl text-slate-800 dark:text-slate-100 leading-tight max-w-xl">
             Welcome to My{" "}<br />
 
             <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Digital Garden
+              Dev. Portfolio
             </span>
           </h1>
-          <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed">
-            Where creativity blooms and projects grow into beautiful experiences
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg">
+            Building reliable software, solving complex problems, and shipping products that scale.
           </p>
 
           {/* CTA Buttons */}
@@ -72,75 +172,59 @@ const Home = () => {
 
         </div>
 
-        {/* Hero Garden - Animated Plant */}
-        <div className="relative flex h-88 sm:h-104 lg:h-125 items-end justify-center lg:justify-end pb-4 lg:pb-20">
-          {/* Main Plant */}
-          <div className="relative transition-all duration-300 scale-75 sm:scale-90 lg:scale-100 origin-bottom">
-            {/* Pot */}
-            <div className="w-40 h-28 rounded-b-2xl rounded-t-md relative z-10"
-              style={{
-                background: 'linear-gradient(to bottom, #78350f, #451a03)',
-                boxShadow: 'inset 0 -6px 12px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.15)'
-              }}>
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-5 rounded-t-md border-b-2 border-stone-900"
-                style={{ background: '#292524' }}></div>
+        {/* Hero Terminal Widget */}
+        <div className="relative flex h-80 sm:h-88 lg:h-96 items-start justify-center lg:justify-end lg:pt-4">
+          <div className="w-full max-w-lg border-t border-r border-cyan-400/35 bg-slate-950/90 backdrop-blur-md shadow-[0_0_0_1px_rgba(34,211,238,0.1),0_30px_60px_rgba(15,23,42,0.5)]">
+            <div className="flex items-center justify-between border-b border-cyan-400/20 px-4 py-3 text-slate-200">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-cyan-300">
+                  <TerminalSquare className="w-4 h-4" />
+                  <span className="uppercase tracking-[0.2em]">mahfuz@portfolio: ~</span>
+                </div>
+              </div>
+              <span className="text-xs text-slate-400">bash</span>
             </div>
 
-            {/* Stem */}
-            <div
-              className="absolute bottom-24 left-1/2 -translate-x-1/2 w-5 h-36 rounded-t-full animate-grow"
-              style={{
-                zIndex: 5,
-                background: 'linear-gradient(to top, #10b981, #34d399)',
-                boxShadow: 'inset -2px 0 4px rgba(0,0,0,0.2), 0 2px 8px rgba(16, 185, 129, 0.3)'
-              }}>
-            </div>
-
-            {/* Leaves - Left Side */}
-            <div className="absolute bottom-40 left-1/2 -translate-x-1/2 -ml-8">
+            <div className="space-y-3 p-4 sm:p-5 font-mono text-sm text-slate-200">
               <div
-                className="w-16 h-9 rounded-full animate-leaf-left"
-                style={{
-                  background: 'linear-gradient(135deg, #6ee7b7, #34d399)',
-                  boxShadow: '0 2px 8px rgba(110, 231, 183, 0.5)'
-                }}></div>
-            </div>
-
-            {/* Leaves - Right Side */}
-            <div className="absolute bottom-40 left-1/2 -translate-x-1/2 ml-8">
-              <div
-                className="w-16 h-9 rounded-full animate-leaf-right"
-                style={{
-                  background: 'linear-gradient(135deg, #6ee7b7, #34d399)',
-                  boxShadow: '0 2px 8px rgba(110, 231, 183, 0.5)'
-                }}></div>
-            </div>
-
-            {/* Flower */}
-            <div className="absolute -top-47 left-1/2 -translate-x-1/2 animate-bloom z-20">
-              {/* Petals */}
-              <div className="relative w-28 h-28">
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((rotation) => (
-                  <div
-                    key={rotation}
-                    className="absolute top-1/2 left-1/2 w-10 h-14 -mt-7 -ml-5"
-                    style={{ transform: `rotate(${rotation}deg) translateY(-14px)` }}
-                  >
-                    <div
-                      className="w-full h-full rounded-full opacity-95"
-                      style={{
-                        background: 'linear-gradient(to bottom, #c084fc, #a855f7)',
-                        boxShadow: '0 2px 8px rgba(168, 85, 247, 0.4)'
-                      }}></div>
+                ref={terminalScrollRef}
+                className="space-y-2 pr-1 overflow-auto h-40 sm:h-48 md:h-56 lg:h-64"
+              >
+                {terminalLines.map((line, index) => (
+                  <div key={`${line.type}-${index}`} className="whitespace-pre-wrap leading-relaxed">
+                    {line.type === "input" ? (
+                      <span>
+                        <span className="text-cyan-300">mahfuz@portfolio:~$</span> {line.text}
+                      </span>
+                    ) : (
+                      <span className="text-slate-300">{line.text}</span>
+                    )}
                   </div>
                 ))}
-                {/* Center */}
-                <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full"
-                  style={{
-                    background: 'linear-gradient(to bottom, #fbbf24, #f59e0b)',
-                    boxShadow: 'inset 0 -2px 4px rgba(0,0,0,0.2), 0 0 12px rgba(251, 191, 36, 0.5)'
-                  }}></div>
+
+                <form
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    runCommand(terminalInput);
+                  }}
+                >
+                  <label className="sr-only" htmlFor="terminal-input">
+                    Terminal command input
+                  </label>
+                  <div className="flex items-start gap-2 pt-2 text-slate-200">
+                    <span className="shrink-0 text-cyan-300">mahfuz@portfolio:~$</span>
+                    <input
+                      ref={terminalInputRef}
+                      id="terminal-input"
+                      value={terminalInput}
+                      onChange={(event) => setTerminalInput(event.target.value)}
+                      placeholder="Type help and press Enter"
+                      className="min-w-0 w-full bg-transparent text-slate-100 placeholder:text-slate-500 outline-none caret-cyan-300"
+                      autoComplete="off"
+                      spellCheck={false}
+                    />
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -158,14 +242,14 @@ const Home = () => {
               onClick={(event) => event.stopPropagation()}
             >
               <div className="flex items-start justify-between gap-3">
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100">
-                  what do you want?
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-100">
+                  Resume options
                 </h2>
                 <button
                   type="button"
                   onClick={() => setIsResumePopupOpen(false)}
                   aria-label="Close"
-                  className="rounded-lg p-1 text-slate-500 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="p-1 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>

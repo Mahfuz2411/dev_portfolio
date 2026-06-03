@@ -23,13 +23,13 @@ const Projects = () => {
       {/* Header */}
       <div className="max-w-6xl mx-auto mb-8 sm:mb-12 text-left">
         <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-800 dark:text-slate-100 mb-4">
-          Project{" "}
+          My{" "}
           <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Garden
+            Projects
           </span>
         </h1>
         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300">
-          Explore my growing collection of projects - each one cultivated with care 🌱
+          Explore selected work I designed, built, and deployed end-to-end.
         </p>
       </div>
 
@@ -126,7 +126,7 @@ const Projects = () => {
         {!hasMore && projectsData.length > PROJECTS_PER_PAGE && (
           <div className="text-center py-8">
             <p className="text-slate-500 text-lg">
-              🌸 You've reached the end of the garden! 🌸
+              You reached the end of the project list.
             </p>
           </div>
         )}

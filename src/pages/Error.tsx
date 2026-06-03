@@ -46,7 +46,7 @@ const Error = () => {
             Oops! Page Not Found
           </h1>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed">
-            It seems you've wandered into uncharted territory in my digital garden. 🌿
+            It seems you've navigated to an unknown route.
             The page you're looking for doesn't exist (yet), but don't worry—there's plenty to explore elsewhere!
           </p>
         </div>
@@ -74,7 +74,7 @@ const Error = () => {
 
         {/* Fun Footer Message */}
         <p className="mt-8 text-sm text-slate-500 dark:text-slate-400 italic">
-          "Even the best gardens have some hidden corners!" 🌻
+          "Even great systems return a 404 sometimes."
         </p>
       </div>
       

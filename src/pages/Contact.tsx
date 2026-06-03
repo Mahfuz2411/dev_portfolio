@@ -75,10 +75,10 @@ const Contact = () => {
         {/* Contact Form - Full Width */}
         <Card className="p-6 border-t border-r border-cyan-400/30 bg-slate-900/60 backdrop-blur-md mb-8 gap-4">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-            🌱 Plant a Seed
+            Start a Conversation
           </h2>
           <p className="text-slate-600 dark:text-slate-300 mb-6">
-            Every great collaboration starts with a message
+            Every great collaboration starts with a clear message.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -133,7 +133,7 @@ const Contact = () => {
             {/* Success/Error Messages */}
             {submitStatus === 'success' && (
               <div className="p-4 bg-emerald-50 border-2 border-emerald-200 rounded-lg text-emerald-700">
-                ✅ Thank you for planting a seed! 🌱 Message sent successfully.
+                ✅ Thanks for reaching out. Your message was sent successfully.
               </div>
             )}
             {submitStatus === 'error' && (

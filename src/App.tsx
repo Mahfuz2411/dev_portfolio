@@ -69,10 +69,10 @@ function App() {
           <div className="relative w-full max-w-2xl border border-cyan-400/20 bg-slate-950/75 px-5 py-6 sm:px-8 sm:py-8 shadow-2xl backdrop-blur-md">
 
             <p className="text-[11px] tracking-[0.3em] text-indigo-600/90 dark:text-indigo-300/90 font-semibold">PORTFOLIO</p>
-            <h2 className="mt-3 text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
-              Welcome to <span className="text-indigo-400">Digital Garden</span>
+            <h2 className="mt-3 text-2xl sm:text-4xl font-extrabold text-slate-100 leading-tight">
+              Welcome to <span className="text-indigo-400">My Dev Portfolio</span>
             </h2>
-            <p className="mt-3 text-xs sm:text-lg text-slate-700 dark:text-slate-300/90">
+            <p className="mt-3 text-xs sm:text-lg text-slate-300/90">
               Crafted by Mahfuz Ibne Syful - Software Developer
             </p>
 
