@@ -1,4 +1,4 @@
-const resumePath = `${import.meta.env.BASE_URL}resume003.pdf`;
+const resumePath = `${import.meta.env.BASE_URL}mahfuz_resume002.pdf`;
 
 export const viewResume = () => {
   const link = document.createElement("a");
