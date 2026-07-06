@@ -133,11 +133,11 @@ const Home = () => {
   }, [terminalLines]);
 
   return (
-    <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-4 sm:py-8 lg:py-16 animate-fade-in">
+    <section className="min-h-screen relative overflow-hidden px-4 sm:px-8 py-6 sm:py-8 lg:py-10 animate-fade-in flex items-center">
       {/* Hero Container */}
-      <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <div className="w-full max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         {/* Hero Content */}
-        <div className="space-y-4 sm:space-y-6 lg:pt-4">
+        <div className="space-y-4 sm:space-y-6">
           <h1 className="font-extrabold text-4xl md:text-5xl lg:text-6xl text-slate-800 dark:text-slate-100 leading-tight max-w-xl">
             Welcome to My{" "}<br />
 
@@ -173,7 +173,7 @@ const Home = () => {
         </div>
 
         {/* Hero Terminal Widget */}
-        <div className="relative flex h-80 sm:h-88 lg:h-96 items-start justify-center lg:justify-end lg:pt-4">
+        <div className="relative flex h-80 sm:h-88 lg:h-96 items-start justify-center lg:justify-end">
           <div className="w-full max-w-lg border-t border-r border-cyan-400/35 bg-slate-950/90 backdrop-blur-md shadow-[0_0_0_1px_rgba(34,211,238,0.1),0_30px_60px_rgba(15,23,42,0.5)]">
             <div className="flex items-center justify-between border-b border-cyan-400/20 px-4 py-3 text-slate-200">
               <div className="flex items-center gap-3">
